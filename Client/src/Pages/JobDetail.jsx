@@ -32,7 +32,7 @@ const JobDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`https://job-portal-client-puce.vercel.app/edit-job/${id}`)
+      .get(`https://job-portal-server-delta-flax.vercel.app/edit-job/${id}`)
       .then((res) => setJob(res.data[0]));
   }, []);
   console.log(job);
