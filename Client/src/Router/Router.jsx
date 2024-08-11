@@ -7,7 +7,7 @@ import SalaryPage from "../Pages/SalaryPage";
 import UpdateJob from "../Pages/UpdateJob";
 import JobDetail from "../Pages/JobDetail";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter([S
   {
     path: "/",
     element: <App />,
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         element: <UpdateJob />,
         loader: ({ params }) =>
           fetch(
-            `https://job-portal-client-puce.vercel.app/edit-job/${params.id}`
+            `https://job-portal-server-delta-flax.vercel.app/edit-job/${params.id}`
           ),
       },
       { path: "/job/:id", element: <JobDetail /> },
