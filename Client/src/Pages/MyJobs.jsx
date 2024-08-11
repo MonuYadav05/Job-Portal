@@ -41,11 +41,12 @@ const MyJobs = () => {
     fetch(`https://job-portal-server-delta-flax.vercel.app/delete/${id}`, {
       method: "DELETE",
     })
-      .then((result) => {
-        navigate("/my-job");
-        alert("job is deleted");
-      })
-      .catch((err) => console.log(err));
+       .then((result) => {
+      alert("Job is deleted");
+      // Update state to remove the deleted job
+      setJobs((prevJobs) => prevJobs.filter((job) => job._id !== id));
+    })
+    .catch((err) => console.log(err));
   };
 
   const handleSearch = () => {
