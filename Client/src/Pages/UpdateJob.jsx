@@ -9,7 +9,7 @@ const UpdateJob = () => {
   const navigate = useNavigate();
   const job = useLoaderData()[0];
   const [selectedOption, setSelectedOption] = useState(null);
-
+  console.log(job);
   const { register, handleSubmit } = useForm();
 
   const options = [
