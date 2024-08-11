@@ -10,7 +10,7 @@ const MyJobs = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://job-portal-client-puce.vercel.app/all-jobs")
+    fetch("https://job-portal-server-delta-flax.vercel.app/all-jobs")
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -37,7 +37,7 @@ const MyJobs = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/delete/${id}`, {
+    fetch(`https://job-portal-server-delta-flax.vercel.app/delete/${id}`, {
       method: "DELETE",
     })
       .then((result) => {
