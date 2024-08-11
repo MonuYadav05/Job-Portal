@@ -19,10 +19,22 @@ const router = createBrowserRouter([S
       {
         path: "/edit-job/:id",
         element: <UpdateJob />,
-        loader: ({ params }) =>
-          fetch(
-            `https://job-portal-server-delta-flax.vercel.app/edit-job/${params.id}`
-          ),
+        loader: async ({ params }) => {
+  try {
+    const response = await fetch(
+      `https://job-portal-server-delta-flax.vercel.app/edit-job/${params.id}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Error fetching job data:", error);
+    throw error;
+  }
+};
       },
       { path: "/job/:id", element: <JobDetail /> },
     ],
