@@ -14,7 +14,7 @@ app.use(
 );
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const uri = process.env.MONGODB_URI || `mongodb+srv://Monuyadav60010:yplHM42Ga7opMkBS@job-portal.8grox.mongodb.net/?retryWrites=true&w=majority&appName=job-portal`;
+const uri = process.env.URI || `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@job-portal.8grox.mongodb.net/?retryWrites=true&w=majority&appName=job-portal`;
 
 const client = new MongoClient(uri, {
   serverApi: {
