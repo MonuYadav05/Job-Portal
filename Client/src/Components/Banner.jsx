@@ -2,7 +2,7 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 
-const Banner = ({ query, handleInputChange }) => {
+const Banner = ({  query, query2, handleInputChange2, handleInputChange  }) => {
   return (
     <div className="md:ml-14 ml-3 mt-14 pt-3">
       <h1 className="text-4xl font-semibold">
@@ -29,13 +29,15 @@ const Banner = ({ query, handleInputChange }) => {
             <CiLocationOn className=" absolute h-6 w-6 pt-2 mx-1 text-slate-500" />
             <input
               type="text"
+             value={query2}
               placeholder=" Location ? "
+              onChange={handleInputChange2}
               className="w-full px-7 text-sm border-l-0 focus:border-sky-600  focus:outline-none focus:ring-1 "
             ></input>
           </div>
 
           <button
-            type="submit"
+            disabled
             className="py-1 px-8 bg-blue text-white md:mt-7 mt-4 border h-9  rounded"
           >
             Search
