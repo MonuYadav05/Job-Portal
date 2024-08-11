@@ -25,8 +25,13 @@ const Home = () => {
   // console.log(jobs);
   //handle input change
   const [query, setQuery] = useState("");
+  const [query2, setQuery2] = useState("");
+
   const handleInputChange = (event) => {
     setQuery(event.target.value);
+  };
+  const handleInputChange2 = (event) => {
+    setQuery2(event.target.value);
   };
 
   //filter jobs by title
@@ -75,6 +80,14 @@ const Home = () => {
       filteredJobs = filteredItems;
     }
 
+     if (query2) {
+      filteredJobs = filteredItems.filter(
+        (job) =>
+          job.jobLocation.toLowerCase().indexOf(query2.toLowerCase()) !== -1
+      );
+    }
+
+
     //category filtering
     if (selectedCategory) {
       filteredJobs = filteredJobs.filter(
@@ -104,7 +117,10 @@ const Home = () => {
 
   return (
     <div>
-      <Banner query={query} handleInputChange={handleInputChange} />
+      <Banner  query={query}
+        query2={query2}
+        handleInputChange2={handleInputChange2}
+        handleInputChange={handleInputChange} />
 
       {/* Sidebar */}
       <div className="md:flex bg-[#FAFAFA] my-12">
