@@ -12,7 +12,7 @@ You can check out the live version of the project deployed on Vercel: [Job Porta
 - **Job Search:** Job seekers can search for jobs based on various filters.
 - **Job Application:** Job seekers can apply to jobs directly through the platform.
 - **CRUD Operations:** Employers can create, read, update, and delete job postings.
-- **Responsive Design:** The application is fully responsive and works well on all device sizes.
+- **Responsive Design:** The application is Not fully responsive use dekstop site mode for better experience.
 
 ## Tech Stack
 
