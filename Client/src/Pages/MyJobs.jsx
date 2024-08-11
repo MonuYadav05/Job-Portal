@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MyJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-
+  const navigate = useNavigate();
   useEffect(() => {
     setIsLoading(true);
     fetch("https://job-portal-server-delta-flax.vercel.app/all-jobs")
@@ -41,7 +42,7 @@ const MyJobs = () => {
       method: "DELETE",
     })
       .then((result) => {
-        window.location.reload();
+        navigate("/my-job");
         alert("job is deleted");
       })
       .catch((err) => console.log(err));
