@@ -7,7 +7,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["https://job-portal-clien.vercel.app"],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
   })
