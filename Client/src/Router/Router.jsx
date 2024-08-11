@@ -7,7 +7,7 @@ import SalaryPage from "../Pages/SalaryPage";
 import UpdateJob from "../Pages/UpdateJob";
 import JobDetail from "../Pages/JobDetail";
 
-const router = createBrowserRouter([S
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
